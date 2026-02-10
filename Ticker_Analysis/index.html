@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticker Analysis v2.2 - Refined</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>TICKER ANALYSIS</h2>
+        <input type="text" id="ticker" placeholder="例: NVDA / 7203" autocomplete="off">
+        
+        <div class="btn-group">
+            <div class="btn-wrapper">
+                <button class="btn-summary" onclick="execute('summary')">Summary</button>
+                <div class="btn-desc">Nikkei/Finviz</div>
+            </div>
+            <div class="btn-wrapper">
+                <button class="btn-tv" onclick="execute('tv')">Chart</button>
+                <div class="btn-desc">TradingView</div>
+            </div>
+            <div class="btn-wrapper">
+                <button class="btn-finance" onclick="execute('finance')">Finance</button>
+                <div class="btn-desc">Yahoo!ファイナンス</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
