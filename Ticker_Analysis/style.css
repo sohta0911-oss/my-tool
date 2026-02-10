@@ -1,0 +1,154 @@
+/* =========================================
+    1. 色の定義 (Design Tokens)
+    ========================================= */
+:root {
+      /* ベースカラー：ライチの瑞々しさをイメージ */
+      --bg-color: #fff9f9;
+      /* 全体の背景色（薄いピンク） */
+      --container-bg: #ffffff;
+      /* カードの背景色（白） */
+      --border-color: #ffe0e0;
+      /* 入力欄の枠線 */
+
+      /* テキストカラー */
+      --text-main: #4a1a1a;
+      /* メインの文字（濃い茶色） */
+      --text-sub: #a07a7a;
+      /* 補足の文字（薄い茶色） */
+
+      /* リンク先ごとのイメージカラー */
+      --tv-blue: #2962ff;
+      /* TradingViewの青 */
+      --summary-orange: #ff9800;
+      /* 分析サイトのオレンジ */
+      --finance-green: #4caf50;
+      /* Yahoo!ファイナンスの緑 */
+  }
+
+/* =========================================
+    2. 全体のレイアウト (Global Layout)
+    ========================================= */
+  body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      display: flex;
+      /* 子要素を自由に並べる設定 */
+      align-items: center;
+      /* 垂直方向の真ん中 */
+      justify-content: center;
+      /* 水平方向の真ん中 */
+      height: 100vh;
+      /* 画面の高さ100%分 */
+      background-color: var(--bg-color);
+  }
+
+  /* メインコンテンツを包むカード */
+  .container {
+      width: 100%;
+      max-width: 360px;
+      /* スマホでちょうどいい幅 */
+      text-align: center;
+      padding: 25px;
+      background: var(--container-bg);
+      border-radius: 20px;
+      /* 角を丸く */
+      box-shadow: 0 10px 25px rgba(255, 180, 180, 0.2);
+      /* 柔らかい赤い影 */
+  }
+
+  /* 見出し */
+  h2 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #d32f2f;
+      margin-bottom: 20px;
+      letter-spacing: 0.05em;
+  }
+
+/* =========================================
+    3. 入力フォーム (Input Field)
+    ========================================= */
+input {
+      width: 100%;
+      box-sizing: border-box;
+      /* パディングを含めた幅計算 */
+      padding: 14px;
+      font-size: 1.1rem;
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      margin-bottom: 20px;
+      text-align: center;
+      outline: none;
+      /* クリック時の青枠を消す */
+      background-color: #fff;
+      color: var(--text-main);
+      transition: all 0.2s;
+      /* 変化を滑らかに */
+  }
+
+  /* 入力中（フォーカス時）のスタイル */
+  input:focus {
+      border-color: #ff8080;
+      box-shadow: 0 0 8px rgba(255, 128, 128, 0.2);
+  }
+
+/* =========================================
+    4. ボタンエリア (Button Grid)
+    ========================================= */
+  /* ボタンを3つ並べるグリッド */
+  .btn-group {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      /* 3列均等並び */
+      gap: 10px;
+      /* ボタン間の隙間 */
+  }
+
+  /* 各ボタンとその下の説明文をセットにする */
+  .btn-wrapper {
+      display: flex;
+      flex-direction: column;
+      /* 縦に並べる */
+      align-items: center;
+  }
+
+  /* 共通のボタンスタイル */
+  button {
+      width: 100%;
+      padding: 12px 0;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.1s, opacity 0.2s;
+  }
+
+  /* 押した時の「凹む」演出 */
+  button:active {
+      transform: scale(0.95);
+      opacity: 0.8;
+  }
+
+  /* 各ボタンの色分け */
+  .btn-summary {
+      background-color: var(--summary-orange);
+  }
+
+  .btn-tv {
+      background-color: var(--tv-blue);
+  }
+
+  .btn-finance {
+      background-color: var(--finance-green);
+  }
+
+  /* ボタン下の補足説明 */
+  .btn-desc {
+      margin-top: 6px;
+      font-size: 0.6rem;
+      line-height: 1.2;
+      color: var(--text-sub);
+      font-weight: 500;
+  }
