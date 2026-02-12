@@ -1,81 +1,65 @@
 :root {
-  /* 1. Base Colors */
   --modern-dark: #1a1a1a;
   --modern-light: #f0f0f0;
-  --modern-lime: #c1ff72; /* Lime: 経済・成長 */
-  --modern-cyan: #00d4ff; /* Cyan: 技術・論理 */
-  --modern-pink: #ff0055; /* Pink: 重要・警告 */
-
-  /* 2. Text Colors */
-  --text-main: #ffffff;
-  --text-muted: #a0a0a0;
-  --text-inv: var(--modern-dark);
-
-  /* 3. Gradient (金融工学やTech感を演出) */
-  --grad-tech: linear-gradient(135deg, var(--modern-cyan), var(--modern-lime));
-  --grad-hot: linear-gradient(135deg, var(--modern-pink), var(--modern-cyan));
-
-  /* 4. Semantic Levels (情報の重要度) */
-  --color-primary: var(--modern-cyan);   /* メインの操作（Info） */
-  --color-success: var(--modern-lime);   /* 完了・ポジティブ（Eco/Growth） */
-  --color-danger: var(--modern-pink);    /* 警告・ネガティブ（Alert） */
-
-  /* 5. Glassmorphism (モダンなUI用) */
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-
-  /* --- Typography --- */
-  --font-en: 'Inter', sans-serif;          /* 英語・メイン用 */
-  --font-ja: "Hiragino Sans", "Meiryo", sans-serif; /* 日本語用 */
-  --font-code: 'JetBrains Mono', monospace; /* 数値・プログラミング用 */
-  --font-yomogi: 'Yomogi', cursive;       /* 和風フォント */
-
-  --font-main: var(--font-en), var(--font-ja);
-
-  --fs-base: 1rem;       /* 16px */
-  --fs-sm: 0.875rem;     /* 14px */
-  --fs-lg: 1.25rem;      /* 20px */
-
-  /* --- Spacing (8px単位の倍数にすると綺麗) --- */
-  --space-1: 0.25rem; /* 4px */
-  --space-2: 0.5rem;  /* 8px */
-  --space-4: 1rem;    /* 16px */
-
-  /* --- Radius --- */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-
-  /* --- Animation --- */
-  --transition-base: all 0.2s ease;
+  --modern-accent-1: #c1ff72; /* Lime: 経済・成長 */
+  --modern-accent-2: #00d4ff; /* Cyan: 技術・論理 */
+  --modern-accent-3: #ff0055; /* Pink: 重要・警告 */
 }
 
-/* 基本のフォント */
 body {
-  font-family: var(--font-main);
   background-color: var(--modern-dark);
-  color: var(--text-main);
-  line-height: 1.6;
-  /* 英語のレンダリングを綺麗にする */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  color: var(--modern-light);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
 }
 
-/* 計算結果やコード（金融・統計用） */
-code, .number, .calc-output {
-  font-family: var(--font-code);
-  font-weight: 500;
-}
+.dashboard { width: 100%; max-width: 800px; }
 
-/* 数字専用のクラス：桁を揃え、可読性を最大化 */
-.tabular-nums {
-  font-family: var(--font-code);
-  font-variant-numeric: tabular-nums; /* 数字の幅を一定にする */
-  letter-spacing: -0.02em;
-}
+h1 { border-left: 4px solid var(--modern-accent-3); padding-left: 15px; margin-bottom: 40px; }
+.year { color: var(--modern-accent-3); font-size: 0.8em; }
 
-/* ちょっとしたメモ */
-.memo {
-  font-family: var(--font-yomogi);
-  color: var(--text-muted);
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+/* カードの基本設計 */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  transition: transform 0.3s ease;
+}
+.card:hover { transform: translateY(-5px); border-color: rgba(255, 255, 255, 0.3); }
+
+/* ルート別の色分け */
+.economy .tag { color: var(--modern-accent-1); font-weight: bold; font-size: 12px; }
+.economy .progress { background: var(--modern-accent-1); box-shadow: 0 0 10px var(--modern-accent-1); }
+
+.CS .tag { color: var(--modern-accent-2); font-weight: bold; font-size: 12px; }
+.CS .progress { background: var(--modern-accent-2); box-shadow: 0 0 10px var(--modern-accent-2); }
+
+/* プログレスバー */
+.progress-bar {
+  background: rgba(255, 255, 255, 0.1);
+  height: 8px;
+  border-radius: 4px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+.progress { height: 100%; transition: width 1s ease-in-out; }
+
+/* ボタン */
+.btn {
+  background: transparent;
+  border: 1px solid var(--modern-light);
+  color: var(--modern-light);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+.btn:hover {
+  background: var(--modern-light);
+  color: var(--modern-dark);
 }
