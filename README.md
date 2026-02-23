@@ -13,24 +13,22 @@ Welcome to my repository. I am an independent scholar dedicated to mastering the
 
 ### 1. AMD: Angular Momentum Difference
 A proprietary technical indicator designed to quantify the "difference in momentum" between short-term and long-term trends.
-- **Concept**: Calculates the difference in the angles ($\arctan$) of moving averages on a logarithmic scale.
-- **Dynamic Position Sizing**: Integrates an entropy-like function $f(x) = (cx)\ln(cx)$ to adjust capital allocation based on signal strength.
-- **Goal**: Minimize "whipsaws" (false signals) and automate tiered profit-taking.
+- **Concept**: Calculates the difference in the angles of moving averages on a logarithmic scale.
+$$\Delta \theta = \arctan(\text{MA}_{\text{short}}) - \arctan(\text{MA}_{\text{long}})$$
+- **Dynamic Position Sizing**: Integrates an entropy-like function to adjust capital allocation based on signal strength.
+$$f(x) = (cx) \ln(cx)$$
+Where $x$ represents the signal strength and $c$ is a scaling constant.
 
 ### 2. Arbitrage Percentage Envelope (PPP Friction Model)
-A macro-algorithmic approach to Purchasing Power Parity (PPP) that accounts for real-world market frictions.
-- **The "Three Frictions"**: 
+A macro-algorithmic approach to Purchasing Power Parity (PPP) that accounts for real-world market frictions. The model identifies true arbitrage opportunities where price deviations exceed the sum of weighted friction constants.
+$$\text{Opportunity} \iff |P_a - P_b \cdot E| > \sum_{i=1}^{n} \omega_i C_i$$
+- **The "Three Frictions"**
   1. **Transportation Costs**: Physical movement of goods/people.
   2. **Transaction Costs**: Tariffs, insurance, and psychological/institutional barriers.
   3. **Information Asymmetry**: Time lags between opportunity recognition and execution.
-- **Implementation**: Modeling an "envelope" around PPP to identify true arbitrage opportunities where price deviations exceed the sum of weighted friction constants.
 
 ## 🚀 Core Philosophy & Methodology
-- **Using generative AI**:I leverage **Generative AI** as a high-leverage tool to accelerate my knowledge acquisition and refine my conceptual frameworks. Where I provide the unique ideas and logical structure, and AI assists in polishing implementations and linguistic precision.
+- **Generative AI as High-Leverage Tool**:I provide unique ideas and logical structures; AI assists in polishing implementations and linguistic precision.
 - **Language Strategy**: Thinking logically in English, intuiting in Japanese.
 - **2026 Focus**: Establishing a rigorous foundation in Mathematics and Economics.
-- **Academic Milestone**: Currently preparing for the **USCPA (U.S. Certified Public Accountant)** exam in 2026 to solidify my understanding of accounting as the "language of business."
-- **Tools**: Notion (Log), GitHub (Implementation).
-
-
-
+- **Academic Milestone**: Preparing for the USCPA exam in 2026 to solidify accounting as the "language of business."
