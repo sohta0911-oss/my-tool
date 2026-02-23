@@ -14,9 +14,13 @@ Welcome to my repository. I am an independent scholar dedicated to mastering the
 ### 1. AMD: Angular Momentum Difference
 A proprietary technical indicator designed to quantify the "difference in momentum" between short-term and long-term trends.
 - **Concept**: Calculates the difference in the angles of moving averages on a logarithmic scale.
+
 $$\Delta \theta = \arctan(\text{MA}_{\text{short}}) - \arctan(\text{MA}_{\text{long}})$$
+
 - **Dynamic Position Sizing**: Integrates an entropy-like function to adjust capital allocation based on signal strength.
+
 $$f(x) = (cx) \ln(cx)$$
+
 Where $x$ represents the signal strength and $c$ is a scaling constant.
 
 ### 2. Arbitrage Percentage Envelope (PPP Friction Model)
