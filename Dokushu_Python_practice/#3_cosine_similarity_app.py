@@ -3,7 +3,7 @@ def calculate_inner_product(a,b):
     if len(a) !=len(b):
         raise ValueError("ベクトルの次元が一致しません")
     
-    inner_product = sum(x*y for x,y in zip(a,b))
+    inner_product = sum(x*y for x, y in zip(a,b))
     return inner_product
 
 
