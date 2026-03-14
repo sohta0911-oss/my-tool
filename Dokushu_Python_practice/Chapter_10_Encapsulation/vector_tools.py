@@ -1,15 +1,24 @@
 # vector_tools.py
 
 class Vector:
-    """Represents a mathematical vector and provides basic operations.
+    """Represents a mathematical vector with data protection.
     Attributes:
-        components: A list of numerical values representing the vector.
+        _components: Internal list of numerical values (Encapsulated).
     """
     
     def __init__(self, components):
         """Initializes the vector with components."""
-        self.components = components # これが「インスタンス変数
+        self.components = components
+
+    @property
+    def components(self):
+        """Getter: Returns the components of the vector.
         
+        外部からは v1.components でアクセスできるが、実体は _components を返す。
+        """ 
+        return self._components
+
+    @components.setter
     def l2_norm(self):
         """Calculates the L2 norm."""
         return (sum(x**2 for x in self.components))**(1/2)
